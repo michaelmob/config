@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-export TERM='xterm'
-export EDITOR='vim'
 export PATH="~/.mike/bin:$PATH"
+export TERM='xterm-256color'
+export EDITOR='vim'
+export PS1="\[\033[38;5;9m\]\u\[$(tput sgr0)\]\[\033[38;5;10m\]@\[$(tput sgr0)\]\h:\[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
 
-alias tmux='tmux.appimage'
-alias vim='vim -u ~/.mike/.vimrc'
-
-alias gs='git status'
+source ~/.mike/.bash_aliases
+source ~/.mike/.bash_functions
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

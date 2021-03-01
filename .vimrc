@@ -1,10 +1,13 @@
 " vim: ts=2 sw=2 et
-nmap L g_
-nmap H g0
+map L g_
+map H g0
 
-nmap E gT
-nmap R gt
+map E gT
+map R gt
 
 call mkdir($HOME . "/.mike/.vim/undodir", "p", 0700) 
 set undodir=~/.mike/.vim/undodir
 set undofile
+
+set background=dark
+syntax on

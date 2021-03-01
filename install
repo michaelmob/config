@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -ex
 
+sudo apt install -y fzf fd-find ripgrep
+
 mkdir -p "$HOME/.mike/bin"
 cd "$HOME/.mike/bin"
 
@@ -9,19 +11,21 @@ bold() {
 }
 
 # nvim
-#if [[ -f 'nvim.appimage' ]]; then
-#  echo 'nvim.appimage already installed'
-#else
-#  wget -O 'nvim.appimage' 'https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage'
-#  chmod u+x 'nvim.appimage'
-#fi
+if [[ -f 'nvim' ]]; then
+  echo 'nvim.appimage already installed'
+else
+  wget -O 'nvim' 'https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage'
+  chmod u+x 'nvim'
+fi
+
+echo wow
 
 # tmux
-if [[ -f 'tmux.appimage' ]]; then
-  bold 'tmux.appimage already installed'
+if [[ -f 'tmux' ]]; then
+ bold 'tmux.appimage already installed'
 else
-  wget -O 'tmux.appimage' 'https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage'
-  chmod u+x 'tmux.appimage'
+ wget -O 'tmux' 'https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage'
+ chmod u+x 'tmux'
 fi
 
 # nnn

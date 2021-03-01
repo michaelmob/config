@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+[[ ! -f ~/.mike/bin/tmux  ]] && ~/.mike/install
+TERM=xterm exec ~/.mike/bin/tmux -f ~/.mike/.tmux.conf $@

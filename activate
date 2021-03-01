@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 [[ ! -d ~/.mike/bin  ]] && ~/.mike/install
-export PS1="(mike) $PS1"
 . ~/.mike/.bashrc
