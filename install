@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-set -ex
-
-sudo apt install -y fzf fd-find ripgrep
+#set -ex
 
 mkdir -p "$HOME/.mike/bin"
 cd "$HOME/.mike/bin"
@@ -10,21 +8,30 @@ bold() {
   echo -e "\e[1m$@\e[0m"
 }
 
+# fzf
+if [[ -d ~/.fzf ]]; then
+  bold 'fzf already installed'
+else
+  bold 'downloading fzf'
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+fi
+
 # nvim
 if [[ -f 'nvim' ]]; then
-  echo 'nvim.appimage already installed'
+  bold 'nvim.appimage already installed'
 else
+  bold 'downloading nvim.appimage'
   wget -O 'nvim' 'https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage'
   chmod u+x 'nvim'
 fi
-
-echo wow
 
 # tmux
 if [[ -f 'tmux' ]]; then
  bold 'tmux.appimage already installed'
 else
- wget -O 'tmux' 'https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage'
+  bold 'downloading tmux.appimage'
+  wget -O 'tmux' 'https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage'
  chmod u+x 'tmux'
 fi
 
@@ -32,8 +39,13 @@ fi
 if [[ -f 'nnn' ]]; then
   bold 'nnn already installed'
 else
+  echo 'downloading nnn'
   wget -O '/tmp/nnn.tar.gz' 'https://github.com/jarun/nnn/releases/download/v3.5/nnn-static-3.5.x86_64.tar.gz'
   tar -xvf '/tmp/nnn.tar.gz'
   chmod u+x 'nnn-static'
   mv 'nnn-static' 'nnn'
 fi
+
+# root stuff, if possible
+sudo apt install -y ripgrep
+sudo ln -s ~/.mike/xkb /usr/share/X11/xkb/symbols/xkb
