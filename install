@@ -48,4 +48,4 @@ fi
 
 # root stuff, if possible
 sudo apt install -y ripgrep
-sudo ln -s ~/.mike/xkb /usr/share/X11/xkb/symbols/xkb
+sudo ln -sf ~/.mike/xkb_symbols /usr/share/X11/xkb/symbols/mike
