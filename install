@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#set -ex
+set -ex
 
 mkdir -p "$HOME/.mike/bin"
 cd "$HOME/.mike/bin"
@@ -28,18 +28,18 @@ fi
 
 # tmux
 if [[ -f 'tmux' ]]; then
- bold 'tmux.appimage already installed'
+  bold 'tmux.appimage already installed'
 else
   bold 'downloading tmux.appimage'
   wget -O 'tmux' 'https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage'
- chmod u+x 'tmux'
+  chmod u+x 'tmux'
 fi
 
 # nnn
 if [[ -f 'nnn' ]]; then
   bold 'nnn already installed'
 else
-  echo 'downloading nnn'
+  bold 'downloading nnn'
   wget -O '/tmp/nnn.tar.gz' 'https://github.com/jarun/nnn/releases/download/v3.5/nnn-static-3.5.x86_64.tar.gz'
   tar -xvf '/tmp/nnn.tar.gz'
   chmod u+x 'nnn-static'
