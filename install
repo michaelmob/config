@@ -1,56 +1,90 @@
 #!/usr/bin/env bash
-set -ex
+# vim: sw=2 expandtab
 
-mkdir -p "$HOME/.mike/bin"
-cd "$HOME/.mike/bin"
+set -x
+
+INSTALL_FZF=0
+INSTALL_TMUX=0
+INSTALL_NVIM=0
+INSTALL_NNN=
+INSTALL_XKB_LAYOUT=0
+INSTALL_UTILS=0
+
+mkdir -p ~/.mike/bin
+cd ~/.mike/bin
 
 bold() {
   echo -e "\e[1m$@\e[0m"
 }
 
 # fzf
-if [[ -d ~/.fzf ]]; then
-  bold 'fzf already installed'
-else
-  bold 'downloading fzf'
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
+if [[ $INSTALL_FZF = 0 ]]; then
+  if [[ -d ~/.fzf ]]; then
+    bold 'fzf already installed'
+  else
+    bold 'downloading fzf'
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+  fi
 fi
 
 # nvim
-nvim_file="nvim.appimage"
-nvim_url='https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage'
-if [[ -f "$nvim_file" ]]; then
-  bold "$nvim_file already installed"
-else
-  bold "downloading $nvim_file"
-  wget -O "$nvim_file" "$nvim_url"
-  chmod u+x "$nvim_file"
+if [[ $INSTALL_NVIM = 0 ]]; then
+  nvim_file="nvim.appimage"
+  nvim_url='https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage'
+  if [[ -f "$nvim_file" ]]; then
+    bold "$nvim_file already installed"
+  else
+    bold "downloading $nvim_file"
+    wget -O "$nvim_file" "$nvim_url"
+    chmod u+x "$nvim_file"
+  fi
 fi
 
 # tmux
-tmux_file="tmux.appimage"
-tmux_url='https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage'
-if [[ -f "$tmux_file" ]]; then
-  bold "$tmux_file already installed"
-else
-  bold "downloading $tmux_file"
-  wget -O "$tmux_file" "$tmux_url"
-  chmod u+x "$tmux_file"
+if [[ $INSTALL_TMUX = 0 ]]; then
+  tmux_file="tmux.appimage"
+  tmux_url='https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage'
+  if [[ -f "$tmux_file" ]]; then
+    bold "$tmux_file already installed"
+  else
+    bold "downloading $tmux_file"
+    wget -O "$tmux_file" "$tmux_url"
+    chmod u+x "$tmux_file"
+  fi
 fi
 
 # nnn 
-nnn_url='https://github.com/jarun/nnn/releases/download/v3.5/nnn-static-3.5.x86_64.tar.gz'
-if [[ -f 'nnn' ]]; then
-  bold 'nnn already installed'
-else
-  bold 'downloading nnn'
-  wget -O '/tmp/nnn.tar.gz' "$nnn_url"
-  tar -xvf '/tmp/nnn.tar.gz'
-  chmod u+x 'nnn-static' "$nnn_url"
-  mv 'nnn-static' 'nnn'
+if [[ $INSTALL_NNN = 0 ]]; then
+  nnn_url='https://github.com/jarun/nnn/releases/download/v3.5/nnn-static-3.5.x86_64.tar.gz'
+  if [[ -f 'nnn' ]]; then
+    bold 'nnn already installed'
+  else
+    bold 'downloading nnn'
+    wget -O 'nnn.tar.gz' "$nnn_url"
+    tar -xvf 'nnn.tar.gz'
+    chmod u+x 'nnn-static' "$nnn_url"
+    mv 'nnn-static' 'nnn'
+  fi
+fi
+
+if [[ $EUID -ne 0 ]]; then
+   echo "Run this as root to install extra features." 1>&2
+   exit 100
 fi
 
 # root stuff, if possible
-sudo apt install -y ripgrep fd-find
-sudo ln -sf ~/.mike/xkb_symbols /usr/share/X11/xkb/symbols/mike
+if [[ $INSTALL_UTILS = 0 ]]; then
+  apt install -y ripgrep fd-find
+fi
+
+# install mike's english
+if [[ $INSTALL_XKB_LAYOUT = 0 ]]; then
+  ln -sf ~/.mike/xkb_symbols /usr/share/X11/xkb/symbols/mike
+
+  patch /usr/share/X11/xkb/rules/base.lst ~/.mike/patches/xkb-lst.patch
+  patch /usr/share/X11/xkb/rules/base.xml ~/.mike/patches/xkb-xml.patch
+
+  patch /usr/share/X11/xkb/rules/evdev.lst ~/.mike/patches/xkb-lst.patch
+  patch /usr/share/X11/xkb/rules/evdev.xml ~/.mike/patches/xkb-xml.patch
+fi
