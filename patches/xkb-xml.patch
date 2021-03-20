@@ -1,0 +1,18 @@
+--- base.xml	2021-03-17 20:55:01.475395343 -0400
++++ -	2021-03-17 20:55:53.739503984 -0400
+@@ -1334,6 +1334,15 @@
+   <layoutList>
+     <layout>
+       <configItem>
++        <name>mike</name>
++        <shortDescription>mike</shortDescription>
++	<description>Mike's English (US)</description>
++        <languageList><iso639Id>eng</iso639Id></languageList>
++      </configItem>
++      <variantList/>
++    </layout>
++    <layout>
++      <configItem>
+         <name>us</name>
+         <!-- Keyboard indicator for English layouts -->
+         <shortDescription>en</shortDescription>

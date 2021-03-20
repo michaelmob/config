@@ -1,0 +1,10 @@
+--- base.lst	2021-03-17 20:56:43.468259230 -0400
++++ -	2021-03-17 20:56:53.997750231 -0400
+@@ -191,6 +191,7 @@
+   teck229         Truly Ergonomic Computer Keyboard Model 229 (Standard sized Alt keys, additional Super and Menu key)
+ 
+ ! layout
++  mike            Mike's English (US)
+   us              English (US)
+   af              Afghani
+   ara             Arabic
