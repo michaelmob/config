@@ -10,6 +10,7 @@ alias fd='fdfind'
 alias bashrc='vim -o ~/.mike/.bashrc ~/.mike/.bash_aliases ~/.mike/.bash_functions'
 alias tmuxrc='vim -o ~/.mike/.tmux.conf'
 alias vimrc='vim -o ~/.mike/.vimrc'
+alias run='n ~/.mike/scripts'
 
 alias ls='ls --color=auto'
 alias l='ls -h'
@@ -25,14 +26,23 @@ alias ports='netstat -tulanp'
 alias mem='ps auxf | sort -nr -k 4 | head -10'
 alias cpu='ps auxf | sort -nr -k 3 | head -10'
 
+alias please='sudo $(fc -ln -1)'
 alias +x='chmod +x'
 
-alias please='sudo $(fc -ln -1)'
-alias yank='xclip -sel clip'
 alias col1='awk "{ print $1 }"'
+alias col2='awk "{ print $2 }"'
+alias col3='awk "{ print $3 }"'
+alias col4='awk "{ print $4 }"'
 
+alias yank='xclip -sel clip'
+alias copy='tr -d "\n" | yank'
+alias getip='curl https://ipecho.net/plain | copy'
+
+# git
 alias g='git'
 alias gs='git status'
 alias gd='git diff HEAD'
 
+# flatpak
 alias marker='flatpak run com.github.fabiocolacio.marker'
+alias joplin='flatpak run net.cozic.joplin_desktop'

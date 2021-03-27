@@ -66,6 +66,7 @@ if [[ $INSTALL_NNN = 0 ]]; then
     chmod u+x 'nnn-static' "$nnn_url"
     mv 'nnn-static' 'nnn'
   fi
+  curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh 
 fi
 
 if [[ $EUID -ne 0 ]]; then

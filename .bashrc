@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 export PATH="~/.mike/bin:$PATH"
-export TERM='xterm-256color'
+export TERM='xterm'
 export EDITOR='vim'
 export PS1="\[\033[38;5;9m\]\u\[$(tput sgr0)\]\[\033[38;5;10m\]@\[$(tput sgr0)\]\h:\[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
 
