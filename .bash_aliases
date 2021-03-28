@@ -9,7 +9,7 @@ alias fd='fdfind'
 
 alias bashrc='vim -o ~/.mike/.bashrc ~/.mike/.bash_aliases ~/.mike/.bash_functions'
 alias tmuxrc='vim -o ~/.mike/.tmux.conf'
-alias vimrc='vim -o ~/.mike/.vimrc'
+alias vimrc='vim -p ~/.mike/.vimrc'
 alias run='n ~/.mike/scripts'
 
 alias ls='ls --color=auto'
@@ -46,3 +46,6 @@ alias gd='git diff HEAD'
 # flatpak
 alias marker='flatpak run com.github.fabiocolacio.marker'
 alias joplin='flatpak run net.cozic.joplin_desktop'
+
+# devices
+alias list-input='ls /dev/input'

@@ -2,11 +2,10 @@
 
 syntax on
 set background=dark
-set relativenumber
 
 set nowrap
-
 set autoindent
+"set wildoptions+=pum
 
 call mkdir($HOME . "/.mike/.vim/undodir", "p", 0700)
 set undodir=~/.mike/.vim/undodir
@@ -18,7 +17,7 @@ map H g0
 map E gT
 map R gt
 
-map ZAQ :qa<cr>
+map Z<Esc> :qa<CR>
 
 map <C-h> <Esc><C-w>h
 map <C-j> <Esc><C-w>j

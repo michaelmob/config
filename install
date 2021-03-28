@@ -78,14 +78,3 @@ fi
 if [[ $INSTALL_UTILS = 0 ]]; then
   apt install -y ripgrep fd-find
 fi
-
-# install mike's english
-if [[ $INSTALL_XKB_LAYOUT = 0 ]]; then
-  ln -sf ~/.mike/xkb_symbols /usr/share/X11/xkb/symbols/mike
-
-  patch /usr/share/X11/xkb/rules/base.lst ~/.mike/patches/xkb-lst.patch
-  patch /usr/share/X11/xkb/rules/base.xml ~/.mike/patches/xkb-xml.patch
-
-  patch /usr/share/X11/xkb/rules/evdev.lst ~/.mike/patches/xkb-lst.patch
-  patch /usr/share/X11/xkb/rules/evdev.xml ~/.mike/patches/xkb-xml.patch
-fi
