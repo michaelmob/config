@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# tags: root utility
+exec test $EUID -eq 0

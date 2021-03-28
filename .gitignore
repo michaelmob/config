@@ -1,0 +1,10 @@
+*.swp
+
+.viminfo
+.vim/.netrwhist
+
+.config/Code/
+.cache/
+
+.local/share/gvfs-metadata/
+.local/share/Trash
