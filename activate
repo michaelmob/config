@@ -1,2 +1,4 @@
-#!/usr/bin/bash
-export HOME=~/.mike3
+#!/usr/bin/env sh
+export HOME=/home/michael/.mike
+cd $HOME
+source .bashrc
