@@ -9,8 +9,7 @@ call plug#begin('~/.vim/plugged')
 if exists('g:vscode')
   Plug 'asvetliakov/vim-easymotion', { 'as': 'neo-vim-easymotion' }
 else
-  "Plug 'easymotion/vim-easymotion'
-  Plug 'asvetliakov/vim-easymotion', { 'as': 'neo-vim-easymotion' }
+  Plug 'easymotion/vim-easymotion'
 endif
 
 Plug 'junegunn/vim-easy-align'
@@ -18,6 +17,7 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 syntax on
+set modeline
 set background=dark
 set nowrap
 set autoindent
@@ -31,7 +31,7 @@ map H g0
 map E gT
 map R gt
 
-map ZXC :qa<CR>
+map ZA :qa<CR>
 nmap <Space>w :w
 
 map <Space>h <Esc><C-w>h
