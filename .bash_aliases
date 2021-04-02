@@ -50,6 +50,7 @@ alias getproxyip='curlp https://ipecho.net/plain'
 alias getip='curl https://ipecho.net/plain'
 
 # git
+alias lg='lazygit'
 alias g='git'
 alias gs='git status'
 alias gd='git diff HEAD'
