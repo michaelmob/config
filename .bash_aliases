@@ -4,12 +4,18 @@ alias s='source ~/.bashrc && clear'
 alias c='clear'
 
 alias bashrc='vim -o ~/.bashrc ~/.bash_aliases ~/.bash_functions'
+alias aliasrc='vim ~/.bash_aliases'
 alias bashrc-tabs='vim -p ~/.bashrc ~/.bash_aliases ~/.bash_functions'
 alias tmuxrc='vim -o ~/.tmux.conf'
 alias vimrc='vim -p ~/.vimrc'
+alias keyrc='vim -O ~/.local/share/xkb/xkb_symbols /usr/share/X11/xkb/symbols/us'
+
+alias local='n ~/.local'
+alias bin='n ~/.local/bin'
+alias share='n ~/.local/share'
 
 alias ls='ls --color=auto -a'
-alias l='ls -ah'
+alias l='ls -1Fhat'
 alias ll='ls -lah'
 alias lt='du -sh * | sort -h'
 
@@ -26,7 +32,7 @@ alias cpu='ps auxf | sort -nr -k 3 | head -10'
 
 # permissions
 alias please='sudo $(fc -ln -1)'
-alias +x='chmod +x'
+alias +x='chmod u+x'
 
 # columns
 alias col1='awk "{ print $1 }"'

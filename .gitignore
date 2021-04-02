@@ -6,6 +6,11 @@
 .pki/
 .bash_history
 %*
+bin/
+.vscode/
 .local/share/gvfs-metadata/
 .local/share/Trash
+.local/share/flatpak
 .config/
+.less*
+.wget-*

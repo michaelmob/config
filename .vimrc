@@ -1,22 +1,26 @@
 " vim: ts=2 sw=2 et
-
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  let plugurl = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs ' plugurl
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'asvetliakov/vim-easymotion'
+if exists('g:vscode')
+  Plug 'asvetliakov/vim-easymotion', { 'as': 'neo-vim-easymotion' }
+else
+  "Plug 'easymotion/vim-easymotion'
+  Plug 'asvetliakov/vim-easymotion', { 'as': 'neo-vim-easymotion' }
+endif
+
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 call plug#end()
 
 syntax on
 set background=dark
-
 set nowrap
 set autoindent
-
 call mkdir($HOME . '/.vim/undodir', 'p', 0700)
 set undodir=~/.vim/undodir
 set undofile
@@ -27,12 +31,13 @@ map H g0
 map E gT
 map R gt
 
-map Z<Esc> :qa<CR>
+map ZXC :qa<CR>
+nmap <Space>w :w
 
-map <C-h> <Esc><C-w>h
-map <C-j> <Esc><C-w>j
-map <C-k> <Esc><C-w>k
-map <C-l> <Esc><C-w>l
+map <Space>h <Esc><C-w>h
+map <Space>j <Esc><C-w>j
+map <Space>k <Esc><C-w>k
+map <Space>l <Esc><C-w>l
 
 nmap s <Plug>(easymotion-s2)
 nmap gl <Plug>(easymotion-bd-jk)
