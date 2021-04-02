@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+systemd-resolve --statistics
+echo '----------------'
+systemd-resolve --flush-caches
+echo '----------------'
+systemd-resolve --statistics
