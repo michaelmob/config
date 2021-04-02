@@ -8,5 +8,5 @@ tar -zxvf nnn.tar.gz nnn-static
 chmod +x nnn-static
 
 # move it
-mkdir -p ~/.local/share/bin
-mv nnn-static ~/.local/share/bin/nnn
+mkdir -p ~/.local/bin
+mv nnn-static ~/.local/bin/nnn

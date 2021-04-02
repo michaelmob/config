@@ -8,3 +8,4 @@
 %*
 .local/share/gvfs-metadata/
 .local/share/Trash
+.config/
