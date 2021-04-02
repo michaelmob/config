@@ -10,8 +10,8 @@ alias tmuxrc='vim -o ~/.tmux.conf'
 alias vimrc='vim -p ~/.vimrc'
 alias keyrc='vim -O ~/.local/share/xkb/xkb_symbols /usr/share/X11/xkb/symbols/us'
 
-alias local='n ~/.local'
 alias bin='n ~/.local/bin'
+alias local='n ~/.local'
 alias share='n ~/.local/share'
 
 alias ls='ls --color=auto -a'
