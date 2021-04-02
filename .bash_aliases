@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 alias r='n -H ~/.local/scripts'
 alias s='source ~/.bashrc && clear'
-alias c='clear'
+alias c='clear; l'
 
 alias bashrc='vim -o ~/.bashrc ~/.bash_aliases ~/.bash_functions'
 alias aliasrc='vim ~/.bash_aliases'
