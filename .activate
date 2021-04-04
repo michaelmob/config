@@ -4,4 +4,3 @@ export HOME=/home/michael/.mike
 cd $HOME
 source .bashrc
 export MIKE_ENV=1
-exec bash $@

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-alias r='n -H ~/.local/scripts'
+alias r='nnn -H ~/.local/scripts'
 alias s='source ~/.bashrc && clear'
 alias c='clear; l'
 
@@ -10,17 +10,17 @@ alias tmuxrc='vim -o ~/.tmux.conf'
 alias vimrc='vim -p ~/.vimrc'
 alias keyrc='vim -O ~/.local/share/xkb/xkb_symbols /usr/share/X11/xkb/symbols/us'
 
-alias bin='n ~/.local/bin'
-alias local='n ~/.local'
-alias share='n ~/.local/share'
+alias gbin='nnn ~/.local/bin'
+alias glocal='nnn ~/.local'
+alias gshare='nnn ~/.local/share'
 
-alias ls='ls --color=auto -a'
-alias l='ls -1Fhat'
+alias ls='ls --color=auto'
+alias l='ls -1Ft'
 alias ll='ls -lah'
 alias lt='du -sh * | sort -h'
 
 # utilities
-alias archive='tar --create --gzip --verbose --file'
+alias zip='tar --create --gzip --verbose --file'
 alias mkdir='mkdir -p'
 alias cpv='rsync -ah --info=progress2'
 alias trash='mv --force -t ~/.local/share/Trash '
@@ -61,3 +61,8 @@ alias joplin='flatpak run net.cozic.joplin_desktop'
 
 # devices
 alias list-input='ls /dev/input'
+
+# apt
+alias apts='apt search'
+alias apti='sudo apt install'
+alias aptu='sudo apt update && sudo apt upgrade'

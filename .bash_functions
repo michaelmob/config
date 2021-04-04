@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# vim: set sw=2 expandtab
+# vim: ts=2 et
 
 # Source: https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.bash_zsh
 n() {

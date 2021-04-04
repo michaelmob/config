@@ -34,10 +34,10 @@ map R gt
 map ZA :qa<CR>
 nmap <Space>w :w
 
-map <Space>h <Esc><C-w>h
-map <Space>j <Esc><C-w>j
-map <Space>k <Esc><C-w>k
-map <Space>l <Esc><C-w>l
+map <C-h> <Esc><C-w>h
+map <C-j> <Esc><C-w>j
+map <C-k> <Esc><C-w>k
+map <C-l> <Esc><C-w>l
 
 nmap s <Plug>(easymotion-s2)
 nmap gl <Plug>(easymotion-bd-jk)
