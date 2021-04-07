@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+
 alias r='nnn -H ~/.local/scripts'
 alias s='source ~/.bashrc && clear'
 alias c='clear; l'
+alias t='TERM=xterm exec ~/.mike/.local/bin/tmux.appimage -f ~/.mike/.tmux.conf'
 
+# config
 alias bashrc='vim -o ~/.bashrc ~/.bash_aliases ~/.bash_functions'
 alias aliasrc='vim ~/.bash_aliases'
 alias bashrc-tabs='vim -p ~/.bashrc ~/.bash_aliases ~/.bash_functions'

@@ -10,6 +10,7 @@ if exists('g:vscode')
   Plug 'asvetliakov/vim-easymotion', { 'as': 'neo-vim-easymotion' }
 else
   Plug 'easymotion/vim-easymotion'
+  Plug 'tpope/vim-commentary'
 endif
 
 Plug 'junegunn/vim-easy-align'
