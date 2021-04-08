@@ -14,3 +14,7 @@ bin/
 .config/
 .less*
 .wget-*
+
+.fzf.zsh
+.fzf.bash
+.fzf/

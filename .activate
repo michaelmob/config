@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-export HOME=/home/michael/.mike
-[[ "$MIKE_ENV" ]] && echo 'already sourced' && exit 0
-cd $HOME
-source .bashrc
-export MIKE_ENV=1
