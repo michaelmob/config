@@ -6,7 +6,7 @@
        <configItem>
 +        <name>mike</name>
 +        <shortDescription>mike</shortDescription>
-+	<description>Mike's English (US)</description>
++	<description>English (Mike)</description>
 +        <languageList><iso639Id>eng</iso639Id></languageList>
 +      </configItem>
 +      <variantList/>

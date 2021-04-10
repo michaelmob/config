@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
-TERM=xterm ~/.mike/.local/bin/tmux.appimage -f ~/.mike/.tmux.conf
