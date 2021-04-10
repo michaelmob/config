@@ -2,6 +2,7 @@
 
 # git
 alias gs='git status'
+alias gd='git diff HEAD'
 
 # apt
 alias aptu='sudo apt update && sudo apt upgrade'
