@@ -10,6 +10,9 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-eunuch'
+Plug 'chrisbra/Recover.vim'
+Plug 'wellle/targets.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
@@ -23,6 +26,8 @@ set nowrap
 set autoindent
 
 call mkdir($HOME . '/.vim/undodir', 'p', 0700)
+call mkdir($HOME . '/.vim/swap', 'p', 0700)
+set directory=~/.vim/swap
 set undodir=~/.vim/undodir
 set undofile
 
@@ -52,3 +57,4 @@ nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
 silent file
+set paste
