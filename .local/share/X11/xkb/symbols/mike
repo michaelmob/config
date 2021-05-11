@@ -1,0 +1,31 @@
+default  partial alphanumeric_keys modifier_keys
+xkb_symbols "basic" {
+  name[Group1] = "English (Mike)";
+
+  include "us(basic)"
+  include "level3(caps_switch)"
+  include "altwin(swap_lalt_lwin)"
+
+  key <AD11> { [ bracketleft, braceleft, Escape ] };
+  key <AD03> { [ e, E, Escape ] };
+  key <AB06> { [ n, N, Tab ] };
+  key <AD10> { [ p, P, ISO_Left_Tab ] };
+  //key <AB06> { [ n, N, Next ] };
+
+  key <AC04> { [ u, U, Prior ] };
+  key <AC03> { [ d, D, Next ] };
+
+  key <AC01> { [ a, A, Home ] };
+  key <AC02> { [ s, S, BackSpace ] };
+  //key <AC03> { [ d, D, Delete ] };
+  key <AC04> { [ f, F, End ] };
+  key <AC05> { [ g, G, Menu ] };
+
+  key <AB02> { [ x, X, Delete ] };
+
+  key <AC06> { [ h, H, Left ] };
+  key <AC07> { [ j, J, Down ] };
+  key <AC08> { [ k, K, Up ] };
+  key <AC09> { [ l, L, Right ] };
+};
+
