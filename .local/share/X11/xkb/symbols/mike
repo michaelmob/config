@@ -8,20 +8,23 @@ xkb_symbols "basic" {
 
   key <AD11> { [ bracketleft, braceleft, Escape ] };
   key <AD03> { [ e, E, Escape ] };
-  key <AB06> { [ n, N, Tab ] };
-  key <AD10> { [ p, P, ISO_Left_Tab ] };
-  //key <AB06> { [ n, N, Next ] };
 
-  key <AC04> { [ u, U, Prior ] };
-  key <AC03> { [ d, D, Next ] };
+  //key <AB06> { [ n, N, Tab ] };
+  //key <AD10> { [ p, P, ISO_Left_Tab ] };
+
+  key <AD10> { [ p, P, Prior ] };
+  key <AB06> { [ n, N, Next ] };
+
+  //key <AC04> { [ u, U, Prior ] };
+  //key <AC03> { [ d, D, Next ] };
 
   key <AC01> { [ a, A, Home ] };
   key <AC02> { [ s, S, BackSpace ] };
-  //key <AC03> { [ d, D, Delete ] };
+  key <AC03> { [ d, D, Delete ] };
   key <AC04> { [ f, F, End ] };
-  key <AC05> { [ g, G, Menu ] };
 
-  key <AB02> { [ x, X, Delete ] };
+  key <AC05> { [ g, G, Menu ] };
+  //key <AB02> { [ x, X, Delete ] };
 
   key <AC06> { [ h, H, Left ] };
   key <AC07> { [ j, J, Down ] };
