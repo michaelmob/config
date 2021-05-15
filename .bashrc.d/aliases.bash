@@ -13,6 +13,10 @@ alias au='sudo apt update && sudo apt upgrade'
 alias ai='sudo apt install'
 alias as='apt search'
 
+# dnf
+alias di='sudo dnf install'
+alias ds='dnf search'
+
 # systemctl
 alias sss='sudo systemctl status'
 alias ss='sudo systemctl'
