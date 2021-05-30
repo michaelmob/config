@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-sudo vim /etc/resolv.conf
+#!/bin/sh
+sudoedit /etc/resolv.conf

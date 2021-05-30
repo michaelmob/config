@@ -21,10 +21,14 @@ alias ds='dnf search'
 alias sss='sudo systemctl status'
 alias ss='sudo systemctl'
 
+alias sudovim='EDITOR=vim sudoedit'
+
 # rc
-alias bashrc='vim-quad ~/.bash_profile ~/.bashrc ~/.bash_aliases ~/.bash_functions'
+#alias bashrc='vim-quad ~/.bash_profile ~/.bashrc ~/.bashrc.d/ ~/.bashrc.d/aliases.bash'
+alias bashrc='code ~/.bashrc ~/.bash_profile ~/.bashrc.d'
 alias vimrc='vim -O ~/.vimrc ~/.vsnvimrc'
 alias tmuxrc='vim -O ~/.tmuxp.yml ~/.tmux.conf'
 
+# util
 alias clip='xclip -selection clipboard'
 alias c='clear'
